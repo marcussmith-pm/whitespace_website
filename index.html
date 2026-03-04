@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whitespace Consulting | AI Solutions & Swarm Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --accent: #2563eb;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-700);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--black);
+        }
+
+        .nav-cta {
+            padding: 0.6rem 1.4rem;
+            background: var(--black);
+            color: var(--white) !important;
+            border-radius: 6px;
+            font-size: 0.85rem !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gray-800);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 6rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            color: var(--black);
+            line-height: 1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .rotating-text {
+            display: inline-block;
+            color: var(--gray-400);
+            position: relative;
+            min-height: 1.1em;
+        }
+
+        .rotating-text span {
+            display: inline-block;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .rotating-text span.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .rotating-text span.hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            position: absolute;
+        }
+
+        .hero-description {
+            font-size: 1.35rem;
+            color: var(--gray-500);
+            max-width: 650px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--gray-700);
+            text-decoration: none;
+            border: 1.5px solid var(--gray-300);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gray-400);
+            background: var(--gray-50);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--gray-200);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--gray-300);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--black);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+            color: var(--white);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .service-features li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+
+        .case-study-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .case-study-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-study-card.reverse {
+            direction: rtl;
+        }
+
+        .case-study-card.reverse > * {
+            direction: ltr;
+        }
+
+        .case-study-image {
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .case-study-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .case-study-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+        }
+
+        .case-study-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .case-study-meta {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .case-study-description {
+            color: var(--gray-600);
+            margin-bottom: 1.75rem;
+            line-height: 1.7;
+        }
+
+        .case-study-link {
+            color: var(--black);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-study-link svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.2s;
+        }
+
+        .case-study-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 2rem;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .testimonials .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .testimonials .section-label {
+            color: var(--gray-500);
+        }
+
+        .testimonials .section-title {
+            color: var(--white);
+        }
+
+        .testimonials .section-description {
+            color: var(--gray-400);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-200);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-quote svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gray-500);
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gray-700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 8rem 2rem;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .faq .section-label {
+            color: var(--gray-500);
+        }
+
+        .faq .section-title {
+            color: var(--white);
+        }
+
+        .faq .section-description {
+            color: var(--gray-400);
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            color: var(--white);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-answer {
+            color: var(--gray-300);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+            gap: 1rem;
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gray-400);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            padding: 0 2rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 2rem;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-box p {
+            font-size: 1.15rem;
+            color: var(--gray-500);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--gray-400);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links li:not(.nav-cta) {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .services-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .case-study-card.reverse {
+                direction: ltr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="Whitespace_logo.png" alt="Whitespace Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                We build<br>
+                <span class="rotating-text">
+                    <span class="active">AI solutions</span>
+                    <span class="hidden">swarm systems</span>
+                    <span class="hidden">intelligent agents</span>
+                    <span class="hidden">the future</span>
+                </span>
+            </h1>
+            <p class="hero-description">
+                From strategy to deployment, we help organisations harness artificial intelligence to transform operations and unlock new possibilities.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">
+                    Start a project <i data-lucide="arrow-right" style="width: 18px;"></i>
+                </a>
+                <a href="#services" class="btn-secondary">Explore services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">What we do</p>
+                <h2 class="section-title">AI solutions that scale</h2>
+                <p class="section-description">Move beyond pilots and proof-of-concepts. We build production-ready AI systems that deliver real business impact.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <h3>AI Agents</h3>
+                    <p>Deploy autonomous AI agents that work like digital team members, handling tasks from customer inquiries to complex workflows.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle-2"></i> Task-specific AI support</li>
+                        <li><i data-lucide="check-circle-2"></i> 24/7 availability</li>
+                        <li><i data-lucide="check-circle-2"></i> Seamless human handoff</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3>Generative AI</h3>
+                    <p>Unlock the power of LLMs and generative models with safe, practical implementations tailored to your business needs.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle-2"></i> Bespoke model integration</li>
+                        <li><i data-lucide="check-circle-2"></i> RAG implementation</li>
+                        <li><i data-lucide="check-circle-2"></i> Enterprise-grade security</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in delay-3">
+                    <div class="service-icon">
+                        <i data-lucide="network"></i>
+                    </div>
+                    <h3>Swarm Intelligence</h3>
+                    <p>Multi-agent systems that collaborate to solve complex problems, enabling scalable and resilient AI architectures.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle-2"></i> Coordinated agent networks</li>
+                        <li><i data-lucide="check-circle-2"></i> Self-organizing systems</li>
+                        <li><i data-lucide="check-circle-2"></i> Emergent behavior design</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in delay-1">
+                    <div class="service-icon">
+                        <i data-lucide="workflow"></i>
+                    </div>
+                    <h3>Process Automation</h3>
+                    <p>Streamline operations with intelligent automation that reduces manual work and improves accuracy across your organisation.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle-2"></i> Workflow optimisation</li>
+                        <li><i data-lucide="check-circle-2"></i> Intelligent document processing</li>
+                        <li><i data-lucide="check-circle-2"></i> Decision automation</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in delay-2">
+                    <div class="service-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h3>AI Strategy</h3>
+                    <p>Develop a comprehensive AI roadmap aligned with your business objectives, from opportunity assessment to implementation planning.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle-2"></i> AI readiness assessment</li>
+                        <li><i data-lucide="check-circle-2"></i> Use case identification</li>
+                        <li><i data-lucide="check-circle-2"></i> ROI modeling</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in delay-3">
+                    <div class="service-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <h3>AI Workshops</h3>
+                    <p>Interactive sessions that demystify AI, align your team on possibilities, and build confidence for AI adoption.</p>
+                    <ul class="service-features">
+                        <li><i data-lucide="check-circle-2"></i> Executive briefings</li>
+                        <li><i data-lucide="check-circle-2"></i> Team training</li>
+                        <li><i data-lucide="check-circle-2"></i> Hands-on prototyping</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies" id="work">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">Featured work</p>
+                <h2 class="section-title">Real results for real businesses</h2>
+                <p class="section-description">See how we've helped organisations transform their operations with AI.</p>
+            </div>
+            <div class="case-study-card fade-in">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80" alt="Clinical Healthcare">
+                </div>
+                <div class="case-study-content">
+                    <h3>TriageFlow</h3>
+                    <p class="case-study-meta">Healthcare • AI-Powered Triage</p>
+                    <p class="case-study-description">Clinical referral triage platform for New Zealand healthcare that uses AI-powered document analysis to prioritise patient referrals. Built with Next.js, TypeScript, and OpenAI integration. HIPAA/HITECH compliant with HL7 and FHIR standards support.</p>
+                </div>
+            </div>
+            <div class="case-study-card reverse fade-in">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=80" alt="Digital Land Map">
+                </div>
+                <div class="case-study-content">
+                    <h3>MT Savannah</h3>
+                    <p class="case-study-meta">Blockchain • Real World Asset Tokenisation</p>
+                    <p class="case-study-description">Real world asset tokenisation platform built on Solana blockchain that enables fractional ownership of land. Features Google Maps integration, What3Words, Stripe payments, and Solana Web3 with Phantom wallet. Built with Vite, Node.js/Express, MetaPlex, and IPFS.</p>
+                </div>
+            </div>
+            <div class="case-study-card fade-in">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=80" alt="Airplane Flying">
+                </div>
+                <div class="case-study-content">
+                    <h3>Flight Price Monitor</h3>
+                    <p class="case-study-meta">Travel Technology • Price Intelligence</p>
+                    <p class="case-study-description">Python/FastAPI tool for monitoring flight prices with intelligent email alerts. Features multiple route monitoring, smart deal detection, and a web dashboard. Integrated with Amadeus API, PostgreSQL, Mailgun, and APScheduler for automated price tracking.</p>
+                </div>
+            </div>
+            <div class="case-study-card reverse fade-in">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&auto=format&fit=crop&q=80" alt="Cinema Tickets">
+                </div>
+                <div class="case-study-content">
+                    <h3>Ticket Loyalty Engine</h3>
+                    <p class="case-study-meta">Entertainment • Loyalty System</p>
+                    <p class="case-study-description">Advanced cinema loyalty platform and recommendation engine that rewards customers for ticket purchases. Leverages machine learning to deliver personalised film suggestions and incentives, helping cinemas build customer loyalty and increase repeat visits.</p>
+                </div>
+            </div>
+            <div class="case-study-card fade-in">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=80" alt="Call Centre Team">
+                </div>
+                <div class="case-study-content">
+                    <h3>BPO Workforce Management</h3>
+                    <p class="case-study-meta">Business Operations • Process Automation</p>
+                    <p class="case-study-description">Comprehensive workforce management solution for BPO operations that optimises scheduling, tracks performance metrics, and automates resource allocation. Enables data-driven decisions to improve operational efficiency and employee satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-title">Common questions</h2>
+                <p class="section-description">Everything you need to know about working with us.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        How long does an AI project typically take?
+                        <i data-lucide="plus"></i>
+                    </div>
+                    <div class="faq-answer">Timeline varies by complexity. A simple AI agent can be deployed in 4-6 weeks, while comprehensive swarm systems may take 3-6 months. We always start with a discovery phase to provide accurate estimates.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        What industries do you work with?
+                        <i data-lucide="plus"></i>
+                    </div>
+                    <div class="faq-answer">We work across financial services, healthcare, manufacturing, retail, and technology. Our focus is on organizations with complex operational challenges that can benefit from AI and automation.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        Do we need in-house AI expertise?
+                        <i data-lucide="plus"></i>
+                    </div>
+                    <div class="faq-answer">Not necessarily. We can handle the full AI development lifecycle. However, we also offer training and knowledge transfer to help your team build AI capabilities over time.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        How do you ensure data security and privacy?
+                        <i data-lucide="plus"></i>
+                    </div>
+                    <div class="faq-answer">Security is paramount. We follow enterprise best practices, including data encryption, access controls, and compliance with GDPR, SOC 2, and industry-specific regulations. We can deploy on your infrastructure if preferred.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        What's your engagement model?
+                        <i data-lucide="plus"></i>
+                    </div>
+                    <div class="faq-answer">We offer flexible engagements: fixed-scope projects, ongoing partnerships, or advisory retainers. Every engagement starts with a scoping phase to ensure alignment on goals and deliverables.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        Can you help us build an internal AI team?
+                        <i data-lucide="plus"></i>
+                    </div>
+                    <div class="faq-answer">Yes. We offer AI talent strategy services, including role definitions, hiring support, and training programs to help your organization build sustainable AI capabilities.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container fade-in">
+            <div class="cta-box">
+                <h2>Ready to transform your business with AI?</h2>
+                <p>Let's discuss how we can help you harness the power of artificial intelligence and swarm systems to benefit your organisation.</p>
+
+                <form action="https://formspree.io/f/xvgpzkbw" method="POST" class="contact-form" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+                    <input type="text" name="name" placeholder="Your Name" required style="padding: 1rem; border: 2px solid var(--gray-300); border-radius: 8px; font-family: inherit; font-size: 1rem;">
+                    <input type="email" name="email" placeholder="Your Email" required style="padding: 1rem; border: 2px solid var(--gray-300); border-radius: 8px; font-family: inherit; font-size: 1rem;">
+                    <textarea name="message" placeholder="Tell us about your project" required style="padding: 1rem; border: 2px solid var(--gray-300); border-radius: 8px; font-family: inherit; font-size: 1rem; min-height: 120px; resize: vertical;"></textarea>
+                    <button type="submit" class="btn-primary" style="justify-content: center;">
+                        Send Message <i data-lucide="arrow-right" style="width: 18px;"></i>
+                    </button>
+                </form>
+                <p style="font-size: 0.85rem; color: var(--gray-400); margin-top: 1rem;">Protected by reCAPTCHA and subject to Formspree's <a href="https://formspree.io/legal/privacy-policy/" style="color: var(--gray-400);">Privacy Policy</a> and <a href="https://formspree.io/legal/terms-of-service/" style="color: var(--gray-400);">Terms of Service</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Whitespace</h3>
+                <p>We build AI solutions and swarm systems that transform how organisations work.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">AI Agents</a></li>
+                    <li><a href="#services">Generative AI</a></li>
+                    <li><a href="#services">Swarm Intelligence</a></li>
+                    <li><a href="#services">AI Strategy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Case Studies</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Whitespace Consulting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Rotating text animation
+        const rotatingText = document.querySelector('.rotating-text');
+        const words = rotatingText.querySelectorAll('span');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            words[currentIndex].classList.remove('active');
+            words[currentIndex].classList.add('hidden');
+
+            currentIndex = (currentIndex + 1) % words.length;
+
+            words[currentIndex].classList.remove('hidden');
+            words[currentIndex].classList.add('active');
+        }, 3000);
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current FAQ
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Fade-in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
