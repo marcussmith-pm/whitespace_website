@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whitespace Consulting | AI Solutions & Swarm Intelligence</title>
+    <title>Whitespace Consulting | Product Strategy, Software &amp; AI</title>
+    <meta name="description" content="Whitespace combines product strategy, delivery management and engineering to build software and AI systems for complex business operations.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -111,68 +112,47 @@
             background: var(--gray-800);
         }
 
-        /* Hero Section */
+        /* Live code rain with transient, character-built agent faces. */
         .hero {
-            min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 8rem 2rem 6rem;
+            padding: 9rem 3.6vw 10rem;
             background: var(--white);
             position: relative;
+            isolation: isolate;
+            overflow: hidden;
         }
-
-        .hero-content {
-            max-width: 1000px;
-            text-align: center;
+        .code-background { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+        #agent-code { display: block; width: 100%; height: 100%; }
+        .hero-content { max-width: 680px; position: relative; top: 1rem; }
+        .hero-eyebrow {
+            font-size: .875rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: .09em; color: var(--black); margin-bottom: 2rem;
         }
-
         .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            color: var(--black);
-            line-height: 1;
-            margin-bottom: 2rem;
-            letter-spacing: -0.03em;
+            font-size: clamp(3.25rem, 6.8vw, 6rem); font-weight: 600;
+            color: var(--black); line-height: 1.03; letter-spacing: -.055em; margin-bottom: 3.5rem;
         }
-
-        .rotating-text {
-            display: inline-block;
-            color: var(--gray-400);
-            position: relative;
-            min-height: 1.1em;
+        .hero-description { font-size: clamp(1.125rem, 1.65vw, 1.5rem); color: var(--black); line-height: 1.6; margin-bottom: 2.5rem; }
+        .hero-actions { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .hero .btn-secondary { border-color: var(--gray-500); color: var(--black); }
+        .hero-note { position: absolute; bottom: 3.5rem; left: 3.6vw; font-size: 1rem; color: var(--black); }
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+        @media (max-width: 768px) {
+            .hero { min-height: 100svh; padding: 9rem 1.5rem 9rem; align-items: flex-start; }
+            .hero-content { max-width: 100%; top: 0; }
+            .hero-title { font-size: clamp(2.7rem, 9vw, 4.6rem); }
+            .hero-eyebrow { font-size: .75rem; line-height: 1.7; margin-bottom: 2rem; max-width: 270px; }
+            .hero-description { font-size: 1.125rem; max-width: 360px; margin-bottom: 2.5rem; }
+            .hero-actions { gap: .75rem; }
+            .hero .btn-primary, .hero .btn-secondary { padding: .9rem 1.2rem; font-size: .875rem; }
+            .hero-note { left: 1.5rem; bottom: 5.5rem; font-size: .875rem; }
         }
-
-        .rotating-text span {
-            display: inline-block;
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        .rotating-text span.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .rotating-text span.hidden {
-            opacity: 0;
-            transform: translateY(20px);
-            position: absolute;
-        }
-
-        .hero-description {
-            font-size: 1.35rem;
-            color: var(--gray-500);
-            max-width: 650px;
-            margin: 0 auto 3rem;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .fade-in { transition: none; }
+            .fade-in { opacity: 1; transform: none; }
         }
 
         .btn-primary {
@@ -211,516 +191,8 @@
             background: var(--gray-50);
         }
 
-        /* Services Section */
-        .services {
-            padding: 8rem 2rem;
-            background: var(--gray-50);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--gray-400);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-description {
-            font-size: 1.15rem;
-            color: var(--gray-500);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 3rem 2.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid var(--gray-200);
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border-color: var(--gray-300);
-        }
-
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--black);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.75rem;
-            color: var(--white);
-        }
-
-        .service-icon svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 1rem;
-            letter-spacing: -0.01em;
-        }
-
-        .service-card p {
-            color: var(--gray-500);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .service-features {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--gray-600);
-        }
-
-        .service-features li svg {
-            width: 18px;
-            height: 18px;
-            color: var(--black);
-            flex-shrink: 0;
-        }
-
-        /* Case Studies */
-        .case-studies {
-            padding: 8rem 2rem;
-            background: var(--white);
-        }
-
-        .case-study-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        .case-study-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .case-study-card.reverse {
-            direction: rtl;
-        }
-
-        .case-study-card.reverse > * {
-            direction: ltr;
-        }
-
-        .case-study-image {
-            aspect-ratio: 4/3;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .case-study-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .case-study-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .case-study-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 100%);
-        }
-
-        .case-study-content h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .case-study-meta {
-            font-size: 0.9rem;
-            color: var(--gray-400);
-            margin-bottom: 1.25rem;
-            font-weight: 500;
-        }
-
-        .case-study-description {
-            color: var(--gray-600);
-            margin-bottom: 1.75rem;
-            line-height: 1.7;
-        }
-
-        .case-study-link {
-            color: var(--black);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .case-study-link svg {
-            width: 18px;
-            height: 18px;
-            transition: transform 0.2s;
-        }
-
-        .case-study-link:hover svg {
-            transform: translateX(4px);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 8rem 2rem;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .testimonials .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .testimonials .section-label {
-            color: var(--gray-500);
-        }
-
-        .testimonials .section-title {
-            color: var(--white);
-        }
-
-        .testimonials .section-description {
-            color: var(--gray-400);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2.5rem;
-        }
-
-        .testimonial-quote {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--gray-200);
-            margin-bottom: 2rem;
-        }
-
-        .testimonial-quote svg {
-            width: 24px;
-            height: 24px;
-            color: var(--gray-500);
-            margin-bottom: 1rem;
-            opacity: 0.5;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--gray-700);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .testimonial-name {
-            font-weight: 600;
-            color: var(--white);
-        }
-
-        .testimonial-role {
-            font-size: 0.85rem;
-            color: var(--gray-400);
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 8rem 2rem;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .faq .section-label {
-            color: var(--gray-500);
-        }
-
-        .faq .section-title {
-            color: var(--white);
-        }
-
-        .faq .section-description {
-            color: var(--gray-400);
-        }
-
-        .faq-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .faq-question {
-            color: var(--white);
-        }
-
-        .faq-question:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .faq-answer {
-            color: var(--gray-300);
-        }
-
-        .faq-grid {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem 2rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.2s;
-            gap: 1rem;
-        }
-
-        .faq-question svg {
-            width: 20px;
-            height: 20px;
-            color: var(--gray-400);
-            transition: transform 0.3s;
-            flex-shrink: 0;
-        }
-
-        .faq-item.active .faq-question svg {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s, padding 0.3s;
-            padding: 0 2rem;
-            line-height: 1.7;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding-bottom: 1.5rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 8rem 2rem;
-            background: var(--white);
-            text-align: center;
-        }
-
-        .cta-box {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-box h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--black);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .cta-box p {
-            font-size: 1.15rem;
-            color: var(--gray-500);
-            margin-bottom: 2.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--black);
-            color: var(--gray-400);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand h3 {
-            color: var(--white);
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .footer-brand p {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            max-width: 300px;
-        }
-
-        .footer-column h4 {
-            color: var(--white);
-            font-size: 0.9rem;
-            margin-bottom: 1.25rem;
-            font-weight: 600;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column a {
-            color: var(--gray-400);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-column a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid var(--gray-800);
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links li:not(.nav-cta) {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-description {
-                font-size: 1.1rem;
-            }
-
-            .services-grid,
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .case-study-card {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .case-study-card.reverse {
-                direction: ltr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
     </style>
+    <link rel="stylesheet" href="page.css?v=7047fc2f9e58">
 </head>
 <body>
     <!-- Navigation -->
@@ -730,378 +202,106 @@
                 <img src="Whitespace_logo.png" alt="Whitespace Logo">
             </a>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+                <li><a href="#services">What we do</a></li>
+                <li><a href="#work">Our work</a></li>
+                <li><a href="#approach">How we work</a></li>
+                <li><a href="#contact" class="nav-cta">Discuss a project</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="code-background" aria-hidden="true">
+            <canvas id="agent-code"></canvas>
+        </div>
         <div class="hero-content">
-            <h1 class="hero-title">
-                We build<br>
-                <span class="rotating-text">
-                    <span class="active">AI solutions</span>
-                    <span class="hidden">swarm systems</span>
-                    <span class="hidden">intelligent agents</span>
-                    <span class="hidden">the future</span>
-                </span>
-            </h1>
-            <p class="hero-description">
-                From strategy to deployment, we help organisations harness artificial intelligence to transform operations and unlock new possibilities.
-            </p>
+            <h1 class="hero-title" id="hero-title">We build agentic<br>products for complex work.</h1>
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary">
-                    Start a project <i data-lucide="arrow-right" style="width: 18px;"></i>
+                <a href="#contact" class="btn-primary">Discuss a project</a>
+                <a href="#services" class="btn-secondary">Explore our services</a>
+            </div>
+        </div>
+        <a class="hero-journey" href="#services"><span>01 /</span> Product strategy, software &amp; AI <i data-lucide="arrow-down" aria-hidden="true"></i></a>
+    </section>
+
+    <main class="page-content">
+        <section class="challenge-section page-section" id="services" aria-labelledby="challenge-title">
+            <header class="section-header"><p class="eyebrow"><span class="section-index">01</span> What we do</p><h2 id="challenge-title">From product decisions to working software.</h2></header>
+            <div class="challenge-list">
+                <details class="challenge" name="engagement">
+                    <summary>Product, CX and UX strategy.<i data-lucide="plus" class="expand-icon" aria-hidden="true"></i><i data-lucide="minus" class="collapse-icon" aria-hidden="true"></i></summary>
+                    <div class="challenge-panel">
+                        <div><h3>Define the product and the experience around it.</h3><p>The product you build and the experience you deliver depend on the same decisions: whose needs matter, where the opportunity lies and what to prioritise. We connect business goals with customer expectations, then translate that direction into journeys, task flows and design principles. Your team has a shared brief for design and engineering, and a basis for making trade-offs.</p><a class="text-link" href="#contact" data-challenge="I would like to discuss product strategy, customer experience (CX) and user experience (UX).">Discuss your strategy <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+                        <div class="challenge-deliverables"><p class="small-label">Product direction and experience strategy</p><ul class="deliverables"><li><i data-lucide="square-check" aria-hidden="true"></i>Product strategy: define the proposition, business priorities and roadmap, so your team knows what to build and why.</li><li><i data-lucide="square-check" aria-hidden="true"></i>CX strategy: map customer journeys across channels and service touchpoints, identifying gaps and opportunities to improve the experience.</li><li><i data-lucide="square-check" aria-hidden="true"></i>UX strategy: translate user needs into task flows and interaction principles to guide design, prototyping and usability evaluation.</li></ul></div>
+                    </div>
+                </details>
+                <details class="challenge" name="engagement" open>
+                    <summary>Get the product built and into use.<i data-lucide="plus" class="expand-icon" aria-hidden="true"></i><i data-lucide="minus" class="collapse-icon" aria-hidden="true"></i></summary>
+                    <div class="challenge-panel">
+                        <div><h3>Bring delivery and engineering into the same conversation.</h3><p>Between a brief and a release, someone has to resolve the detail. We take on product decisions, delivery coordination and engineering together, so requirements, integrations and release priorities stay connected as the software takes shape.</p><ul class="deliverables"><li><i data-lucide="square-check" aria-hidden="true"></i>Product requirements and delivery planning</li><li><i data-lucide="square-check" aria-hidden="true"></i>Software development and system integrations</li><li><i data-lucide="square-check" aria-hidden="true"></i>Testing, release and iteration</li></ul><a class="btn-primary challenge-cta" href="#contact" data-challenge="I would like to discuss product development, delivery and engineering.">Plan your build <i data-lucide="arrow-right" aria-hidden="true"></i></a></div>
+                        <figure class="challenge-visual"><img src="assets/product-workspace.jpg" alt="Illustrative product workspace with a working application and build checklist" width="1000" height="650"><figcaption>Product development illustration</figcaption></figure>
+                    </div>
+                </details>
+                <details class="challenge" name="engagement">
+                    <summary>Agentic operations across your business.<i data-lucide="plus" class="expand-icon" aria-hidden="true"></i><i data-lucide="minus" class="collapse-icon" aria-hidden="true"></i></summary>
+                    <div class="challenge-panel">
+                        <div><h3>Coordinate the work between people, agents and systems.</h3><p>When information sits across separate systems, your team has to assemble the context, decide what happens next and carry the work forward. We design agentic operations around that whole workflow: connecting data, assigning tasks to specialist agents and coordinating their actions across your tools. We define how agents hand work to one another, when exceptions need a person and how your team monitors the results, so you can delegate work with clear accountability.</p><a class="text-link" href="#contact" data-challenge="I would like to discuss agentic operations, connecting our systems and coordinating AI agents with our team.">Discuss agentic operations <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+                        <div class="challenge-deliverables"><p class="small-label">Agentic engineering and operations</p><ul class="deliverables"><li><i data-lucide="square-check" aria-hidden="true"></i>Connected workflows: give agents access to the data and tools each task requires.</li><li><i data-lucide="square-check" aria-hidden="true"></i>Agent coordination: define responsibilities, business rules and hand-offs across the operation.</li><li><i data-lucide="square-check" aria-hidden="true"></i>Operational oversight: build in permissions, human approvals, exception handling and performance monitoring.</li></ul></div>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="selected-work section-band page-section" id="work" aria-labelledby="work-title">
+            <header class="section-header"><p class="eyebrow"><span class="section-index">02</span> Selected work</p><h2 id="work-title">Software shaped by the operation behind it.</h2></header>
+            <div class="project-list">
+                <a class="project-example" href="#contact" data-challenge="I would like to discuss an AI-assisted medical referral system." aria-label="Discuss a project like TriageFlow">
+                    <img src="assets/triageflow-project.jpg" alt="Illustrative medical referral queue" width="1200" height="320" loading="lazy"><div><h3>TriageFlow</h3><p>Medical referral teams need to assess requests and decide what needs attention. TriageFlow applies AI to referral review and prioritisation, supporting the people making those decisions.</p></div><i data-lucide="arrow-right" aria-hidden="true"></i>
                 </a>
-                <a href="#services" class="btn-secondary">Explore services</a>
+                <a class="project-example" href="#contact" data-challenge="I would like to discuss a platform for real-world assets." aria-label="Discuss a project like MySquare">
+                    <img src="assets/mysquare-project.jpg" alt="Illustrative register of real-world assets" width="1200" height="320" loading="lazy"><div><h3>MySquare</h3><p>MySquare centres on real-world assets: translating a physical asset proposition into a digital platform, with the product decisions and engineering that requires.</p></div><i data-lucide="arrow-right" aria-hidden="true"></i>
+                </a>
+                <a class="project-example" href="#contact" data-challenge="I would like to discuss a workforce management system." aria-label="Discuss a project like Workforce Management">
+                    <img src="assets/workforce-story.jpg" alt="Illustrative workforce scheduling and planning interface" width="1200" height="520" loading="lazy"><div><h3>Workforce Management</h3><p>Planning a workforce means connecting the schedule with how the operation performs. This system brings scheduling, performance tracking and operational planning together.</p></div><i data-lucide="arrow-right" aria-hidden="true"></i>
+                </a>
+                <a class="project-example" href="#contact" data-challenge="I would like to discuss RFID asset management." aria-label="Discuss a project like RFID Asset Management">
+                    <img src="assets/rfid-project.jpg" alt="Illustrative asset inventory showing RFID scan statuses" width="1200" height="320" loading="lazy"><div><h3>RFID Asset Management</h3><p>Knowing which asset you have is the starting point for tracking it. This system uses RFID identification and scan activity to connect physical assets with their digital records.</p></div><i data-lucide="arrow-right" aria-hidden="true"></i>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header fade-in">
-                <p class="section-label">What we do</p>
-                <h2 class="section-title">AI solutions that scale</h2>
-                <p class="section-description">Move beyond pilots and proof-of-concepts. We build production-ready AI systems that deliver real business impact.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in delay-1">
-                    <div class="service-icon">
-                        <i data-lucide="bot"></i>
-                    </div>
-                    <h3>AI Agents</h3>
-                    <p>Deploy autonomous AI agents that work like digital team members, handling tasks from customer inquiries to complex workflows.</p>
-                    <ul class="service-features">
-                        <li><i data-lucide="check-circle-2"></i> Task-specific AI support</li>
-                        <li><i data-lucide="check-circle-2"></i> 24/7 availability</li>
-                        <li><i data-lucide="check-circle-2"></i> Seamless human handoff</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in delay-2">
-                    <div class="service-icon">
-                        <i data-lucide="sparkles"></i>
-                    </div>
-                    <h3>Generative AI</h3>
-                    <p>Unlock the power of LLMs and generative models with safe, practical implementations tailored to your business needs.</p>
-                    <ul class="service-features">
-                        <li><i data-lucide="check-circle-2"></i> Bespoke model integration</li>
-                        <li><i data-lucide="check-circle-2"></i> RAG implementation</li>
-                        <li><i data-lucide="check-circle-2"></i> Enterprise-grade security</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in delay-3">
-                    <div class="service-icon">
-                        <i data-lucide="network"></i>
-                    </div>
-                    <h3>Swarm Intelligence</h3>
-                    <p>Multi-agent systems that collaborate to solve complex problems, enabling scalable and resilient AI architectures.</p>
-                    <ul class="service-features">
-                        <li><i data-lucide="check-circle-2"></i> Coordinated agent networks</li>
-                        <li><i data-lucide="check-circle-2"></i> Self-organizing systems</li>
-                        <li><i data-lucide="check-circle-2"></i> Emergent behavior design</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in delay-1">
-                    <div class="service-icon">
-                        <i data-lucide="workflow"></i>
-                    </div>
-                    <h3>Process Automation</h3>
-                    <p>Streamline operations with intelligent automation that reduces manual work and improves accuracy across your organisation.</p>
-                    <ul class="service-features">
-                        <li><i data-lucide="check-circle-2"></i> Workflow optimisation</li>
-                        <li><i data-lucide="check-circle-2"></i> Intelligent document processing</li>
-                        <li><i data-lucide="check-circle-2"></i> Decision automation</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in delay-2">
-                    <div class="service-icon">
-                        <i data-lucide="target"></i>
-                    </div>
-                    <h3>AI Strategy</h3>
-                    <p>Develop a comprehensive AI roadmap aligned with your business objectives, from opportunity assessment to implementation planning.</p>
-                    <ul class="service-features">
-                        <li><i data-lucide="check-circle-2"></i> AI readiness assessment</li>
-                        <li><i data-lucide="check-circle-2"></i> Use case identification</li>
-                        <li><i data-lucide="check-circle-2"></i> ROI modeling</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in delay-3">
-                    <div class="service-icon">
-                        <i data-lucide="graduation-cap"></i>
-                    </div>
-                    <h3>AI Workshops</h3>
-                    <p>Interactive sessions that demystify AI, align your team on possibilities, and build confidence for AI adoption.</p>
-                    <ul class="service-features">
-                        <li><i data-lucide="check-circle-2"></i> Executive briefings</li>
-                        <li><i data-lucide="check-circle-2"></i> Team training</li>
-                        <li><i data-lucide="check-circle-2"></i> Hands-on prototyping</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="process-section page-section" id="approach" aria-labelledby="approach-title">
+            <header class="section-header"><p class="eyebrow"><span class="section-index">03</span> Working together</p><h2 id="approach-title">Clear responsibilities from the first decision.</h2></header>
+            <ol class="process-steps">
+                <li><h3><span>01</span> Understand</h3><p>We work through the problem with the people who know it. We examine existing systems, constraints and assumptions, then agree what a useful result would look like.</p></li>
+                <li><h3><span>02</span> Define</h3><p>We set the scope, responsibilities and delivery priorities together. You know what we are building, what we need from your team and where decisions need more evidence.</p></li>
+                <li><h3><span>03</span> Build</h3><p>We bring working software into regular reviews. Your team can assess the detail, question assumptions and make informed trade-offs while we manage development and integration.</p></li>
+                <li><h3><span>04</span> Put to use</h3><p>We test against the workflows the product must support, resolve feedback and prepare the release. Experience in use then gives us the evidence for the next round of improvements.</p></li>
+            </ol>
+        </section>
 
-    <!-- Case Studies -->
-    <section class="case-studies" id="work">
-        <div class="container">
-            <div class="section-header fade-in">
-                <p class="section-label">Featured work</p>
-                <h2 class="section-title">Real results for real businesses</h2>
-                <p class="section-description">See how we've helped organisations transform their operations with AI.</p>
-            </div>
-            <div class="case-study-card fade-in">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80" alt="Clinical Healthcare">
-                </div>
-                <div class="case-study-content">
-                    <h3>TriageFlow</h3>
-                    <p class="case-study-meta">Healthcare • AI-Powered Triage</p>
-                    <p class="case-study-description">Clinical referral triage platform for New Zealand healthcare that uses AI-powered document analysis to prioritise patient referrals. Built with Next.js, TypeScript, and OpenAI integration. HIPAA/HITECH compliant with HL7 and FHIR standards support.</p>
-                </div>
-            </div>
-            <div class="case-study-card reverse fade-in">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=80" alt="Digital Land Map">
-                </div>
-                <div class="case-study-content">
-                    <h3>MT Savannah</h3>
-                    <p class="case-study-meta">Blockchain • Real World Asset Tokenisation</p>
-                    <p class="case-study-description">Real world asset tokenisation platform built on Solana blockchain that enables fractional ownership of land. Features Google Maps integration, What3Words, Stripe payments, and Solana Web3 with Phantom wallet. Built with Vite, Node.js/Express, MetaPlex, and IPFS.</p>
-                </div>
-            </div>
-            <div class="case-study-card fade-in">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop&q=80" alt="Airplane Flying">
-                </div>
-                <div class="case-study-content">
-                    <h3>Flight Price Monitor</h3>
-                    <p class="case-study-meta">Travel Technology • Price Intelligence</p>
-                    <p class="case-study-description">Python/FastAPI tool for monitoring flight prices with intelligent email alerts. Features multiple route monitoring, smart deal detection, and a web dashboard. Integrated with Amadeus API, PostgreSQL, Mailgun, and APScheduler for automated price tracking.</p>
-                </div>
-            </div>
-            <div class="case-study-card reverse fade-in">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&auto=format&fit=crop&q=80" alt="Cinema Tickets">
-                </div>
-                <div class="case-study-content">
-                    <h3>Ticket Loyalty Engine</h3>
-                    <p class="case-study-meta">Entertainment • Loyalty System</p>
-                    <p class="case-study-description">Advanced cinema loyalty platform and recommendation engine that rewards customers for ticket purchases. Leverages machine learning to deliver personalised film suggestions and incentives, helping cinemas build customer loyalty and increase repeat visits.</p>
-                </div>
-            </div>
-            <div class="case-study-card fade-in">
-                <div class="case-study-image">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=80" alt="Call Centre Team">
-                </div>
-                <div class="case-study-content">
-                    <h3>BPO Workforce Management</h3>
-                    <p class="case-study-meta">Business Operations • Process Automation</p>
-                    <p class="case-study-description">Comprehensive workforce management solution for BPO operations that optimises scheduling, tracks performance metrics, and automates resource allocation. Enables data-driven decisions to improve operational efficiency and employee satisfaction.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header fade-in">
-                <p class="section-label">FAQ</p>
-                <h2 class="section-title">Common questions</h2>
-                <p class="section-description">Everything you need to know about working with us.</p>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        How long does an AI project typically take?
-                        <i data-lucide="plus"></i>
-                    </div>
-                    <div class="faq-answer">Timeline varies by complexity. A simple AI agent can be deployed in 4-6 weeks, while comprehensive swarm systems may take 3-6 months. We always start with a discovery phase to provide accurate estimates.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        What industries do you work with?
-                        <i data-lucide="plus"></i>
-                    </div>
-                    <div class="faq-answer">We work across financial services, healthcare, manufacturing, retail, and technology. Our focus is on organizations with complex operational challenges that can benefit from AI and automation.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        Do we need in-house AI expertise?
-                        <i data-lucide="plus"></i>
-                    </div>
-                    <div class="faq-answer">Not necessarily. We can handle the full AI development lifecycle. However, we also offer training and knowledge transfer to help your team build AI capabilities over time.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        How do you ensure data security and privacy?
-                        <i data-lucide="plus"></i>
-                    </div>
-                    <div class="faq-answer">Security is paramount. We follow enterprise best practices, including data encryption, access controls, and compliance with GDPR, SOC 2, and industry-specific regulations. We can deploy on your infrastructure if preferred.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        What's your engagement model?
-                        <i data-lucide="plus"></i>
-                    </div>
-                    <div class="faq-answer">We offer flexible engagements: fixed-scope projects, ongoing partnerships, or advisory retainers. Every engagement starts with a scoping phase to ensure alignment on goals and deliverables.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">
-                        Can you help us build an internal AI team?
-                        <i data-lucide="plus"></i>
-                    </div>
-                    <div class="faq-answer">Yes. We offer AI talent strategy services, including role definitions, hiring support, and training programs to help your organization build sustainable AI capabilities.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container fade-in">
-            <div class="cta-box">
-                <h2>Ready to transform your business with AI?</h2>
-                <p>Let's discuss how we can help you harness the power of artificial intelligence and swarm systems to benefit your organisation.</p>
-
-                <form action="https://formspree.io/f/xvgpzkbw" method="POST" class="contact-form" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
-                    <input type="text" name="name" placeholder="Your Name" required style="padding: 1rem; border: 2px solid var(--gray-300); border-radius: 8px; font-family: inherit; font-size: 1rem;">
-                    <input type="email" name="email" placeholder="Your Email" required style="padding: 1rem; border: 2px solid var(--gray-300); border-radius: 8px; font-family: inherit; font-size: 1rem;">
-                    <textarea name="message" placeholder="Tell us about your project" required style="padding: 1rem; border: 2px solid var(--gray-300); border-radius: 8px; font-family: inherit; font-size: 1rem; min-height: 120px; resize: vertical;"></textarea>
-                    <button type="submit" class="btn-primary" style="justify-content: center;">
-                        Send Message <i data-lucide="arrow-right" style="width: 18px;"></i>
-                    </button>
+        <section class="contact section-band page-section" id="contact" aria-labelledby="contact-title">
+            <header class="section-header"><p class="eyebrow"><span class="section-index">04</span> Start a project</p><h2 id="contact-title">Start with the problem you need to solve.</h2><p class="contact-lead">Tell us what you are trying to achieve, what you have today and where progress has stalled. We’ll discuss where the work needs to start and what Whitespace would take responsibility for.</p></header>
+            <div class="contact-grid">
+                <form action="https://formspree.io/f/xvgpzkbw" method="POST" class="enquiry-form">
+                    <label class="sr-only" for="enquiry-name">Your name</label><input id="enquiry-name" type="text" name="name" placeholder="Your name" autocomplete="name" required>
+                    <label class="sr-only" for="enquiry-email">Your email</label><input id="enquiry-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+                    <label class="sr-only" for="enquiry-message">What are you working on?</label><textarea id="enquiry-message" name="message" placeholder="The problem, your current position and what needs to change" rows="4" required></textarea>
+                    <button type="submit" class="btn-primary">Send enquiry <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+                    <p class="form-note">We use your details to respond to your enquiry. <a href="privacy.html">Privacy Policy</a>.</p>
+                    <p class="form-note processor-note">Processed by Formspree. <a href="https://formspree.io/legal/privacy-policy/">Privacy</a> · <a href="https://formspree.io/legal/terms-of-service/">Terms</a>.</p>
+                    <p class="form-status" role="status" aria-live="polite"></p>
                 </form>
-                <p style="font-size: 0.85rem; color: var(--gray-400); margin-top: 1rem;">Protected by reCAPTCHA and subject to Formspree's <a href="https://formspree.io/legal/privacy-policy/" style="color: var(--gray-400);">Privacy Policy</a> and <a href="https://formspree.io/legal/terms-of-service/" style="color: var(--gray-400);">Terms of Service</a>.</p>
+                <div class="question-list" aria-label="Questions about working together">
+                    <details><summary>Where would an engagement start?<i data-lucide="plus" aria-hidden="true"></i></summary><p>That depends on what you already know. An early idea may need product definition; an agreed brief may be ready for development. We use the initial conversation to establish the starting point, then agree the work, responsibilities and review process before proceeding.</p></details>
+                    <details><summary>How would AI fit into our existing systems?<i data-lucide="plus" aria-hidden="true"></i></summary><p>We examine the task first: what information it needs, which rules apply and what action should follow. Then we assess data access and integration options. An agent’s permissions and human review points form part of that design, alongside the software connecting it to your systems.</p></details>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>Whitespace</h3>
-                <p>We build AI solutions and swarm systems that transform how organisations work.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#services">AI Agents</a></li>
-                    <li><a href="#services">Generative AI</a></li>
-                    <li><a href="#services">Swarm Intelligence</a></li>
-                    <li><a href="#services">AI Strategy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Case Studies</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">GitHub</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Whitespace Consulting. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Rotating text animation
-        const rotatingText = document.querySelector('.rotating-text');
-        const words = rotatingText.querySelectorAll('span');
-        let currentIndex = 0;
-
-        setInterval(() => {
-            words[currentIndex].classList.remove('active');
-            words[currentIndex].classList.add('hidden');
-
-            currentIndex = (currentIndex + 1) % words.length;
-
-            words[currentIndex].classList.remove('hidden');
-            words[currentIndex].classList.add('active');
-        }, 3000);
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-
-                // Close all other FAQs
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-
-                // Toggle current FAQ
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-
-        // Fade-in animations on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-
-            lastScroll = currentScroll;
-        });
-    </script>
+        </section>
+        <footer class="page-footer"><a class="logo" href="#" aria-label="Whitespace home"><img src="Whitespace_logo.png" alt="Whitespace" width="180" height="40"></a><p>© 2026 Whitespace Consulting</p><a href="privacy.html">Privacy Policy</a></footer>
+    </main>
+    <script src="agent-code.js?v=dd69e98e1885" defer></script>
+    <script src="page.js?v=cee3a4c50161" defer></script>
 </body>
 </html>
