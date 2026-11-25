@@ -243,3 +243,67 @@ User requested deployment of all latest approved changes. Published full copy re
 Railway deployment ae250767-791c-4d2a-850b-587f1903d6c0 reached SUCCESS. All 12 public files returned HTTP 200 and matched SHA-256 hashes of the staged release. Apex homepage matched; privacy policy available. Live browser confirms new headline, both updated service labels, zero project illustration labels, initialized animation canvas, no horizontal overflow and no console errors. Screenshot: /private/tmp/whitespace-live-all-changes.jpg. No form submission sent. JavaScript syntax and whitespace checks passed.
 
 final result: passed
+
+## Researched project pages — 26 November 2026
+
+Built four company-focused project pages from read-only source investigation: TriageFlow, MySquare, Workforce Management and RFID Asset Management. Each includes the problem, users/project focus, a four-step workflow, product and engineering considerations, supported capabilities and relevant scope boundaries. Evidence and editorial limits are recorded in docs/project-research.md. Homepage rows now open the projects; project invitations carry a known key into the existing enquiry form. Retained established typography, grid, borders, grayscale bands and existing illustrations. No change to hero, animation, form delivery or project repositories.
+
+Desktop images loaded and no horizontal overflow on all four pages. Next-project links traversed all four. Homepage project URLs verified; TriageFlow card opens its page. At 355px, RFID page stacks correctly and workflow uses one column. RFID CTA prefills the correct enquiry brief, and the form settles at contactTop110px. Test brief cleared; no form submitted. No console errors observed. Viewport reset. Evidence: /private/tmp/whitespace-triageflow-project.jpg, /private/tmp/whitespace-rfid-project-workflow.jpg, /private/tmp/whitespace-project-mobile.jpg. Local file links, JS syntax and whitespace checks passed. Local preview only; no commit, push or deployment this turn.
+
+final result: passed
+
+## Project pages and Nova portrait — production deployment
+
+26 November 2026. User requested all current changes live and unique titles for every agent. Verified the 12 portrait/name/title mappings: all names and role titles are distinct. Existing unique roles retained. Published the four researched project pages, homepage links and enquiry prefills, Nova’s cropped-hair portrait sheet, and matched 9px code/face/intro size. Public-files-only release excludes research notes and source-project data.
+
+Railway deployment 54f53641-11f3-4bed-9593-21a2d010326e reached SUCCESS. All 17 release files returned HTTP 200 and matched local SHA-256 hashes, including four project pages and the new portrait sheet. Apex homepage and privacy policy verified. Live browser confirms homepage project destinations, initialized animation canvas and versioned renderer, and successful TriageFlow card navigation. No console errors. Evidence: /private/tmp/whitespace-projects-live.jpg. No enquiry sent. Syntax/whitespace checks passed. No commit or push this turn.
+
+final result: passed
+
+## AI within each solution — 26 November 2026
+
+Investigated active source for runtime model calls and agentic orchestration. TriageFlow has verified model-backed pathway selection and triage generation; described bounded AI tasks, inputs, output validation and clinical review. No comparable runtime AI found in the other three reviewed application trees. User explicitly chose to show proposed agentic capabilities clearly. Added labelled proposed-extension sections for MySquare purchase operations, WFM exception investigation and RFID incident investigation, each with inputs, proposed actions and an operator review boundary. Details in docs/agentic-solution-review.md. These are descriptions/proposals, not implementations added to the underlying applications.
+
+Reviewed all three proposal labels/headings in desktop browser, with no horizontal overflow. At 355px the RFID proposal label and content fit; workflows use one column. Reviewed TriageFlow’s implemented AI section. No console errors. Viewport reset. Evidence: /private/tmp/whitespace-proposed-agent-mysquare.jpg, /private/tmp/whitespace-proposed-agent-mobile.jpg, /private/tmp/whitespace-implemented-ai-triage.jpg. Explicit implemented/proposed checks and whitespace check passed. Work CSS version updated. Local preview only; not deployed, committed or pushed.
+
+final result: passed
+
+## Engagement paths and concrete TriageFlow workflow
+
+26 November 2026. Implemented the annotated request to show clear ways to engage and a concrete agentic/AI workflow using TriageFlow. All three service panels now specify Start here, What we take on and What you receive. Strategy deliverables cover product, CX and UX; product-build scope covers delivery and release; agentic operations covers task boundaries, integrations, review points and evaluation. Updated context-specific enquiry prefills.
+
+Added a five-stage homepage workflow within section01: referral intake, service context/guidance, AI assessment, clinician review, and recorded decision/configured routing. Owner labels, output descriptions and a distinct human-review border clarify the handoffs. Links connect the agentic operations panel to the workflow and the workflow to the TriageFlow project’s AI section. It describes bounded AI services verified in source, with no autonomous-clinical or quantified-savings claim. Existing hero, section numbering and main design retained.
+
+Desktop at1164CSSpx shows five cards with no overflow. Mobile355CSSpx stacks cards into one column and all three engagement CTAs prefill the matching brief without overflow. Test brief cleared; no form submitted. Project detail link works. A return from project navigation restores the default-open build panel; reopened operations before using its workflow link. No browser console errors. Viewport reset. Evidence: /private/tmp/whitespace-engagement-strategy.jpg, /private/tmp/whitespace-triageflow-workflow-final.jpg, /private/tmp/whitespace-triageflow-workflow-mobile.jpg. Structural checks verify three scopes and unique IDs. JS syntax/whitespace passed. Local only; no deployment/commit/push.
+
+final result: passed
+
+## Engagement/workflow and revised narratives — production release
+
+26 November 2026. User approved deploying all current work. Public-files-only Railway deployment 2cac944e-e8be-4e27-834b-4b7b9e727e01 reached SUCCESS. Includes three concrete engagement scopes, homepage five-step TriageFlow workflow, implemented/proposed AI sections, approved clinical-capacity framing, MySquare’s two-model explanation and RFID movement/alert story. Retained proposed labels for unverified agentic runtime capabilities.
+
+All 17 release files returned HTTP200 and SHA256-matched the staged release. Apex homepage matched; four project pages and privacy policy verified. Browser confirms three engagement scopes, five workflow stages, no horizontal overflow and no console errors. Evidence: /private/tmp/whitespace-live-engagement-workflow.jpg. No form submission sent. Local links, JS syntax and whitespace checks passed. No commit or push this turn.
+
+final result: passed
+
+## Move workflow off homepage
+
+26 November 2026. Removed the five-stage TriageFlow workflow from the homepage and replaced the existing four-step project overview with it on work/triageflow.html. This avoids duplicate workflow explanations. The homepage’s agentic operations link now points to the project’s workflow anchor. Workflow footnote links locally to the detailed AI assessment section. Retained engagement scopes, hero and main design.
+
+Browser confirms zero workflow cards/IDs on homepage, one workflow and five stages on the project, absence of the superseded overview, and successful homepage-to-project anchor navigation. Preserved compact card typography against project-page CSS. No desktop/mobile horizontal overflow; at355px cards use one column. No console errors observed. Viewport reset. Evidence: /private/tmp/whitespace-workflow-moved.jpg. Whitespace check passed. Local only; not deployed.
+
+final result: passed
+
+## Workflow relocation — production deployment
+
+26 November 2026. User requested publication. Railway deployment 8f8c24cc-a608-47d8-8640-9f414fad1084 reached SUCCESS. All17 public files returned HTTP200 and matched SHA256 of staged files; apex homepage and privacy policy verified. Live browser confirms zero homepage workflow sections, successful homepage link to work/triageflow.html, exactly one five-stage workflow on the project, no horizontal overflow and no console errors. Evidence: /private/tmp/whitespace-live-workflow-moved.jpg. No test enquiry submitted. Syntax and whitespace checks passed. No commit/push this turn.
+
+final result: passed
+
+## Clearer first conversation and direct email
+
+26 November 2026. User requested first-conversation expectations, useful preparation information and a direct email option, then supplied hello@whitespace.consulting. Added short enquiry guidance, a linked form description and three conversation stages covering context, priorities and an agreed next step. Added the supplied address below the form as a mailto link with Project enquiry subject. Kept existing form endpoint, fields, submission handling and privacy disclosures.
+
+Desktop and355px mobile layouts have no horizontal overflow. Verified three conversation stages, aria-describedby linkage and exact mailto target. No email client opened and no message/form submitted. No console errors observed. Viewport reset. Evidence: /private/tmp/whitespace-contact-email-final.jpg, /private/tmp/whitespace-first-conversation-mobile.jpg. Whitespace check passed. Local preview only, not deployed.
+
+final result: passed

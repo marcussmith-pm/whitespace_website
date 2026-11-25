@@ -40,6 +40,18 @@
             updateNavigation();
         });
     });
+    // Project pages carry only a known project key into the existing enquiry form.
+    const projectBriefs = {
+        triageflow: 'I would like to discuss a referral intake and clinical review workflow.',
+        mysquare: 'I would like to discuss a real-world asset platform and buyer journey.',
+        'workforce-management': 'I would like to discuss connecting workforce schedules, attendance and leave.',
+        'rfid-asset-management': 'I would like to discuss RFID asset custody and movement operations.'
+    };
+    const projectKey=new URLSearchParams(window.location.search).get('project');
+    const enquiryMessage=document.querySelector('#enquiry-message');
+    if (Object.hasOwn(projectBriefs,projectKey) && enquiryMessage && !enquiryMessage.value.trim()) {
+        enquiryMessage.value=projectBriefs[projectKey];
+    }
     const form=document.querySelector('.enquiry-form');
     form.addEventListener('submit',async event => {
         event.preventDefault();

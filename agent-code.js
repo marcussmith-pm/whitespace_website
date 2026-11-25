@@ -248,7 +248,7 @@
         cancelAnimationFrame(frame); frame=0; lastTime=0;
         if (!document.hidden) requestDraw();
     });
-    faceImage.src='assets/agent-portraits.jpg';
+    faceImage.src='assets/agent-portraits-nova-v2.jpg';
     faceImage.decode().then(() => {
         const sampler=document.createElement('canvas'); sampler.width=columns; sampler.height=rows;
         const pixels=sampler.getContext('2d',{willReadFrequently:true});
