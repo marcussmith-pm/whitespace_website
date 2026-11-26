@@ -307,3 +307,11 @@ final result: passed
 Desktop and355px mobile layouts have no horizontal overflow. Verified three conversation stages, aria-describedby linkage and exact mailto target. No email client opened and no message/form submitted. No console errors observed. Viewport reset. Evidence: /private/tmp/whitespace-contact-email-final.jpg, /private/tmp/whitespace-first-conversation-mobile.jpg. Whitespace check passed. Local preview only, not deployed.
 
 final result: passed
+
+### Falling code contrast — 26 November 2026
+
+Increased background glyph opacity on desktop and applied a stronger boost below 600px. Kept the shared 9px glyph size, portrait sampling and animation timing. Verified the mobile hero in the browser and confirmed no console errors. `node --check agent-code.js` and `git diff --check` passed. Local preview only; not deployed. Screenshot: `/private/tmp/whitespace-darker-mobile-code.jpg`.
+
+### AI-focused hero copy — 26 November 2026
+
+Replaced the headline with “We build AI products that turn information into action.” Added the approved supporting paragraph explaining strategy, design, engineering and human control. Reduced the headline-to-paragraph gap to keep the existing hero layout balanced. Checked desktop and mobile wrapping; both calls to action remain available, with no console errors. Local only.

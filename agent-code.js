@@ -155,6 +155,9 @@
         return (a*(1-dy)+b*dy)*smooth(face.progress);
     }
     function drawRain() {
+        // Stronger background contrast on narrow screens without changing portraits.
+        const rainBase = width < 600 ? .09 : .06;
+        const rainPulse = width < 600 ? .25 : .21;
         const count=Math.ceil(height/rowGap)+1;
         const cycle=count*rowGap;
         for (const stream of streams) {
@@ -172,7 +175,7 @@
                 const pulse=distance<trail ? Math.pow(1-distance/trail,1.4) : 0;
                 let ink=0;
                 for (const face of faces) ink=Math.max(ink,sampleFace(face,stream.x,y));
-                const alpha=(.045+.18*pulse+ink*(.98+.12*pulse))*quiet;
+                const alpha=(rainBase+rainPulse*pulse+ink*(.98+.12*pulse))*quiet;
                 const index=Math.floor(hash(stream.seed+row*11+Math.floor(rainTime*1.3))*symbols.length);
                 glyph(index,stream.x,y,alpha,ink>.3);
             }
